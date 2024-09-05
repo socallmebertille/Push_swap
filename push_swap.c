@@ -6,7 +6,7 @@
 /*   By: saberton <saberton@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/04 14:52:59 by saberton          #+#    #+#             */
-/*   Updated: 2024/09/04 18:49:52 by saberton         ###   ########.fr       */
+/*   Updated: 2024/09/05 18:55:24 by saberton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	main(int ac, char **av)
 {
-	t_list_node	*a;
-	t_list_node	*b;
+	t_list_node *a;
+	t_list_node *b;
 
 	a = NULL;
 	b = NULL;
@@ -30,6 +30,8 @@ int	main(int ac, char **av)
 			sa(&a);
 		else if (count_node(a) == 3)
 			three_node_sort(&a);
+		else
+			push_algo(&a, &b);
 	}
 	free_list(&a);
 	return (0);

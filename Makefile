@@ -1,7 +1,7 @@
 NAME = push_swap
 CC = cc
 FLAGS = -Wall -Wextra -Werror -g3
-SRCS = push_swap.c push_split.c push_parsing.c free_init.c check_stack.c list_utils.c list_swap.c list_rotate.c list_reverse_rotate.c three_node_sort.c
+SRCS = push_swap.c push_split.c push_parsing.c free_init.c check_stack.c list_utils.c list_swap.c list_rotate.c list_reverse_rotate.c list_push.c three_node_sort.c push_algo.c push_algo_init.c
 OBJS = ${SRCS:.c=.o}
 
 GREEN = \033[1;32m

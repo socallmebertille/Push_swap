@@ -6,39 +6,39 @@
 /*   By: saberton <saberton@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/04 15:34:47 by saberton          #+#    #+#             */
-/*   Updated: 2024/09/04 18:36:50 by saberton         ###   ########.fr       */
+/*   Updated: 2024/09/05 18:15:36 by saberton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static int is_nb(char *s)
+static int	is_nb(char *s)
 {
-    int i;
+	int	i;
 
-    i = 0;
-    if (s[0] == '+' || s[0] == '-')
-        i++;
-    if (!s[i])
-        return (1);
-    while(s[i] >= '0' && s[i] <= '9')
-        i++;
-    if (s[i])
-        return (1);
-    return (0);
+	i = 0;
+	if (s[0] == '+' || s[0] == '-')
+		i++;
+	if (!s[i])
+		return (1);
+	while (s[i] >= '0' && s[i] <= '9')
+		i++;
+	if (s[i])
+		return (1);
+	return (0);
 }
 
-static int  is_double(long nb, t_list_node *a)
+static int	is_double(long nb, t_list_node *a)
 {
-    if (a == NULL)
-        return (0);
-    while(a)
-    {
-        if (a->nb == nb)
-            return (1);
-        a = a->next;
-    }
-    return (0);
+	if (a == NULL)
+		return (0);
+	while (a)
+	{
+		if (a->nb == nb)
+			return (1);
+		a = a->next;
+	}
+	return (0);
 }
 
 static long	ft_atol(const char *str)
@@ -68,59 +68,59 @@ static long	ft_atol(const char *str)
 	return (nb * sign);
 }
 
-t_list_node *find_last(t_list_node *a)
+t_list_node	*find_last(t_list_node *a)
 {
-    if (a == NULL)
-        return (NULL);
-    while(a->next)
-        a = a->next;
-    return (a);
+	if (a == NULL)
+		return (NULL);
+	while (a->next)
+		a = a->next;
+	return (a);
 }
 
-static void  add_node(int nb, t_list_node **a)
+static void	add_node(int nb, t_list_node **a)
 {
-    t_list_node *new_node;
-    t_list_node *last;
-    
-    if (a == NULL)
-        return ;
-    new_node = malloc(sizeof(t_list_node));
-    if (new_node == NULL)
-        return ;
-    new_node->next = NULL;
-    new_node->nb = nb;
-    if (*a == NULL)
-    {
-        *a = new_node;
-        new_node->previous = NULL;
-    }
-    else
-    {
-        last = find_last(*a);
-        last->next = new_node;
-        new_node->previous = last;
-    }
-    }
+	t_list_node	*new_node;
+	t_list_node	*last;
 
-void    checks_init(char **av, bool two_ac, t_list_node **a)
+	if (a == NULL)
+		return ;
+	new_node = malloc(sizeof(t_list_node));
+	if (new_node == NULL)
+		return ;
+	new_node->next = NULL;
+	new_node->nb = nb;
+	if (*a == NULL)
+	{
+		*a = new_node;
+		new_node->previous = NULL;
+	}
+	else
+	{
+		last = find_last(*a);
+		last->next = new_node;
+		new_node->previous = last;
+	}
+}
+
+void	checks_init(char **av, bool two_ac, t_list_node **a)
 {
-    int i;
-    long    nb;
-    
-    i = 0;
-    while(av[i])
-    {
-        if (is_nb(av[i]) == 1)
-            free_init(a, av, two_ac);
-        nb = ft_atol(av[i]);
-        if (nb > INT_MAX || nb < INT_MIN)
-            free_init(a, av, two_ac);
-        if (is_double(nb, *a) == 1)
-            free_init(a, av, two_ac);
-        add_node((int)nb, a);
-        i++;
-    }
-    if (two_ac)
-        free_av(av);
-    return ;
+	int i;
+	long nb;
+
+	i = 0;
+	while (av[i])
+	{
+		if (is_nb(av[i]) == 1)
+			free_init(a, av, two_ac);
+		nb = ft_atol(av[i]);
+		if (nb > INT_MAX || nb < INT_MIN)
+			free_init(a, av, two_ac);
+		if (is_double(nb, *a) == 1)
+			free_init(a, av, two_ac);
+		add_node((int)nb, a);
+		i++;
+	}
+	if (two_ac)
+		free_av(av);
+	return ;
 }
