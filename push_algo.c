@@ -6,7 +6,7 @@
 /*   By: saberton <saberton@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/05 15:54:30 by saberton          #+#    #+#             */
-/*   Updated: 2024/09/05 18:54:09 by saberton         ###   ########.fr       */
+/*   Updated: 2024/09/05 19:08:25 by saberton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ void	sort_a_and_b(t_list_node **a, t_list_node **b, t_list_node *cheapest)
 
 void	push_algo(t_list_node **a, t_list_node **b)
 {
-	// t_list_node *cheapest;
+	t_list_node *lower;
 	int nb_node_a;
 
 	nb_node_a = count_node(*a);
@@ -78,4 +78,15 @@ void	push_algo(t_list_node **a, t_list_node **b)
 		init_algo(*a, *b);
 		replace_in_a(a, b);
 	}
+    lower = find_lowest_node(*a);
+    if (lower->mediane == true)
+    {
+        while (lower != *a)
+            ra(a);
+    }
+    else
+    {
+        while (lower != *a)
+            rra(a);
+    }
 }
