@@ -6,7 +6,7 @@
 /*   By: saberton <saberton@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/04 18:55:13 by saberton          #+#    #+#             */
-/*   Updated: 2024/09/05 18:14:58 by saberton         ###   ########.fr       */
+/*   Updated: 2024/09/06 15:44:40 by saberton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ static void	rotate(t_list_node **a)
 	last->next->previous = last;
 	last->next->next = NULL;
 }
+
 void	ra(t_list_node **a)
 {
 	rotate(a);

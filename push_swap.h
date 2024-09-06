@@ -6,7 +6,7 @@
 /*   By: saberton <saberton@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/04 16:41:43 by saberton          #+#    #+#             */
-/*   Updated: 2024/09/05 18:48:37 by saberton         ###   ########.fr       */
+/*   Updated: 2024/09/06 14:47:54 by saberton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,8 +52,6 @@ void					find_cost(t_list_node *a, t_list_node *b);
 void					find_cheapest(t_list_node *b);
 void					init_algo(t_list_node *a, t_list_node *b);
 void					replace_in_a(t_list_node **a, t_list_node **b);
-void					sort_a_and_b(t_list_node **a, t_list_node **b,
-							t_list_node *cheapest);
 void					push_algo(t_list_node **a, t_list_node **b);
 int						free_init(t_list_node **a, char **av, bool two_ac);
 int						count_node(t_list_node *a);

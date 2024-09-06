@@ -6,7 +6,7 @@
 /*   By: saberton <saberton@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/04 18:55:38 by saberton          #+#    #+#             */
-/*   Updated: 2024/09/05 18:15:21 by saberton         ###   ########.fr       */
+/*   Updated: 2024/09/06 15:44:56 by saberton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ static void	reverse_rotate(t_list_node **a)
 	*a = last;
 	last->next->previous = last;
 }
+
 void	rra(t_list_node **a)
 {
 	reverse_rotate(a);

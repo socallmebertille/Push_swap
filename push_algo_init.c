@@ -6,7 +6,7 @@
 /*   By: saberton <saberton@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/05 15:55:00 by saberton          #+#    #+#             */
-/*   Updated: 2024/09/05 18:14:52 by saberton         ###   ########.fr       */
+/*   Updated: 2024/09/06 15:44:03 by saberton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ void	pos_and_med(t_list_node *a)
 	int	med;
 
 	i = 0;
-	med = count_node(a) / 2;
 	if (a == NULL)
 		return ;
+	med = count_node(a) / 2;
 	while (a)
 	{
 		a->position = i;
@@ -62,15 +62,20 @@ void	find_target(t_list_node *a, t_list_node *b)
 
 void	find_cost(t_list_node *a, t_list_node *b)
 {
+	int	len_b;
+	int	len_a;
+
+	len_b = count_node(b);
+	len_a = count_node(a);
 	while (b)
 	{
 		b->cost = b->position;
 		if (b->mediane == false)
-			b->cost = count_node(b) - b->position;
+			b->cost = (len_b - (b->position));
 		if (b->target->mediane == true)
 			b->cost += b->target->position;
 		else
-			b->cost += count_node(a) - b->target->position;
+			b->cost += (len_a - (b->target->position));
 		b = b->next;
 	}
 	return ;
@@ -78,21 +83,23 @@ void	find_cost(t_list_node *a, t_list_node *b)
 
 void	find_cheapest(t_list_node *b)
 {
-	t_list_node	*cheapest;
-	int			i;
+	t_list_node	*cheapest_node;
+	long		i;
 
-	cheapest = NULL;
-	i = INT_MAX;
+	if (b == NULL)
+		return ;
+	cheapest_node = NULL;
+	i = LONG_MAX;
 	while (b)
 	{
 		if (b->cost < i)
 		{
-			cheapest = b;
+			cheapest_node = b;
 			i = b->cost;
 		}
 		b = b->next;
 	}
-	cheapest->cheapest = true;
+	cheapest_node->cheapest = true;
 	return ;
 }
 

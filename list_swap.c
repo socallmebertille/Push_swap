@@ -6,7 +6,7 @@
 /*   By: saberton <saberton@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/04 17:23:05 by saberton          #+#    #+#             */
-/*   Updated: 2024/09/05 18:14:55 by saberton         ###   ########.fr       */
+/*   Updated: 2024/09/06 15:45:26 by saberton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ static void	swap(t_list_node **a)
 	(*a)->next = (*a)->previous;
 	(*a)->previous = NULL;
 }
+
 void	sa(t_list_node **a)
 {
 	swap(a);

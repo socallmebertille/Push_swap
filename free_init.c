@@ -6,7 +6,7 @@
 /*   By: saberton <saberton@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/04 16:16:07 by saberton          #+#    #+#             */
-/*   Updated: 2024/09/05 18:15:39 by saberton         ###   ########.fr       */
+/*   Updated: 2024/09/06 15:43:21 by saberton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	free_list(t_list_node **a)
 		current = temp;
 	}
 	*a = NULL;
-	// return ;
+	return ;
 }
 
 int	free_init(t_list_node **a, char **av, bool two_ac)

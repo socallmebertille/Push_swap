@@ -6,7 +6,7 @@
 /*   By: saberton <saberton@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/04 15:34:47 by saberton          #+#    #+#             */
-/*   Updated: 2024/09/05 18:15:36 by saberton         ###   ########.fr       */
+/*   Updated: 2024/09/06 15:43:02 by saberton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,15 +68,6 @@ static long	ft_atol(const char *str)
 	return (nb * sign);
 }
 
-t_list_node	*find_last(t_list_node *a)
-{
-	if (a == NULL)
-		return (NULL);
-	while (a->next)
-		a = a->next;
-	return (a);
-}
-
 static void	add_node(int nb, t_list_node **a)
 {
 	t_list_node	*new_node;
@@ -104,8 +95,8 @@ static void	add_node(int nb, t_list_node **a)
 
 void	checks_init(char **av, bool two_ac, t_list_node **a)
 {
-	int i;
-	long nb;
+	int		i;
+	long	nb;
 
 	i = 0;
 	while (av[i])

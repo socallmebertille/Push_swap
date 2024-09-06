@@ -6,7 +6,7 @@
 /*   By: saberton <saberton@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/04 17:09:28 by saberton          #+#    #+#             */
-/*   Updated: 2024/09/05 18:15:11 by saberton         ###   ########.fr       */
+/*   Updated: 2024/09/06 15:45:45 by saberton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,8 +63,8 @@ t_list_node	*find_biggest_node(t_list_node *a)
 
 t_list_node	*find_lowest_node(t_list_node *a)
 {
-	t_list_node *lowest;
-	int i;
+	t_list_node	*lowest;
+	int			i;
 
 	lowest = NULL;
 	if (a == NULL)
@@ -80,4 +80,13 @@ t_list_node	*find_lowest_node(t_list_node *a)
 		a = a->next;
 	}
 	return (lowest);
+}
+
+t_list_node	*find_last(t_list_node *a)
+{
+	if (a == NULL)
+		return (NULL);
+	while (a->next)
+		a = a->next;
+	return (a);
 }
