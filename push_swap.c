@@ -6,7 +6,7 @@
 /*   By: saberton <saberton@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/04 14:52:59 by saberton          #+#    #+#             */
-/*   Updated: 2024/09/06 15:46:15 by saberton         ###   ########.fr       */
+/*   Updated: 2024/09/07 08:52:42 by saberton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,12 @@ int	main(int ac, char **av)
 		else
 			push_algo(&a, &b);
 	}
+	while (a)
+	{
+		printf("%d ", a->nb);
+		a = a->next;
+	}
+	printf("\n");
 	free_list(&a);
 	return (0);
 }

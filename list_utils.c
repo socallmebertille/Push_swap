@@ -6,7 +6,7 @@
 /*   By: saberton <saberton@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/04 17:09:28 by saberton          #+#    #+#             */
-/*   Updated: 2024/09/06 15:45:45 by saberton         ###   ########.fr       */
+/*   Updated: 2024/09/07 00:07:08 by saberton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,9 @@ int	count_node(t_list_node *a)
 {
 	int	count;
 
-	count = 0;
 	if (a == NULL)
 		return (0);
+	count = 0;
 	while (a)
 	{
 		a = a->next;
@@ -45,9 +45,9 @@ t_list_node	*find_biggest_node(t_list_node *a)
 	t_list_node	*biggest;
 	int			i;
 
-	biggest = NULL;
 	if (a == NULL)
 		return (NULL);
+	biggest = NULL;
 	i = INT_MIN;
 	while (a)
 	{
@@ -66,9 +66,9 @@ t_list_node	*find_lowest_node(t_list_node *a)
 	t_list_node	*lowest;
 	int			i;
 
-	lowest = NULL;
 	if (a == NULL)
 		return (NULL);
+	lowest = NULL;
 	i = INT_MAX;
 	while (a)
 	{

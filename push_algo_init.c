@@ -6,7 +6,7 @@
 /*   By: saberton <saberton@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/05 15:55:00 by saberton          #+#    #+#             */
-/*   Updated: 2024/09/06 15:44:03 by saberton         ###   ########.fr       */
+/*   Updated: 2024/09/07 00:24:28 by saberton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,8 @@ void	find_target(t_list_node *a, t_list_node *b)
 	long		i;
 	t_list_node	*begin;
 
+	if (b == NULL)
+		return ;
 	i = LONG_MAX;
 	while (b)
 	{
@@ -65,6 +67,8 @@ void	find_cost(t_list_node *a, t_list_node *b)
 	int	len_b;
 	int	len_a;
 
+	if (b == NULL)
+		return ;
 	len_b = count_node(b);
 	len_a = count_node(a);
 	while (b)
