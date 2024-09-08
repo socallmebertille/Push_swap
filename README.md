@@ -78,9 +78,23 @@ On recupere le maillons le plus grand et si il se trouve :
 
 <br>
 
-On deplace les nombres dans une stack temporaire B sous forme de liste chainee egalement jusqu'a n'avoir que 3 nombres dans A afin de proceder a l'algo pour 3 dans A. 
+On deplace les nombres dans une stack temporaire B sous forme de liste chainee egalement jusqu'a n'avoir que 3 nombres dans A afin de proceder a l'algo pour 3 dans A. Or on va deplacer les elements dans B pour obtenir un premier tri grossier. 
+
 <br>
-Tant que l'on a des elemnts dans B on met a jour :
+
+#### 3.3.1 : on pre-tri
+
+<br>
+
+On calcule la mediane (= nb se situant au milieu d'une liste ordonne) qui nous servira de repere pour push l'element dans B ou le rotate dans A. On repetera l'operation autant de fois que la liste A possede + de 3 elements.
+
+<br>
+
+#### 3.3.2 : on recupere les donnees de chaque element de B
+
+<br>
+
+Tant que l'on a des elements dans B on met a jour :
 <br>
     - les index de positions des noeuds et leurs positions vis-a-vis de la mediane (de A pour les elements de A, respectivement pour B) ;
 <br>
@@ -93,14 +107,65 @@ Tant que l'on a des elemnts dans B on met a jour :
         -> sinon : nb de reverse rotate = longueur de la liste - numero de position
 <br>
     - l'element le moins cher
+<br>
+Une fois cela calcule, on deplace l'element le moins couteux et sa target dans les stacks associees puis on peut donc push celui de B dans A au-dessus de sa target. On repete l'operation autant de fois que d'element dans B.
 
 <br>
 
-### 3.4 :
+### 3.4 : on oublie pas de recuperer le plus petit element en haut
 
 <br>
 
-A
+Il se peut qu'en replacant les element de B dans A, l'element le plus faible se perde en bout de liste. Dans ce cas, meme principe, si superieur a la mediane on rotate sinon on reverse rotate.
 
 <br>
-## ``` void  *ft_memmove(void *dest, const void *src, size_t n); ```
+
+### 4th step : on oublie de proceder au maximum de verif
+
+
+<br>
+
+```
+git clone https://github.com/o-reo/push_swap_visualizer.git
+cd push_swap_visualizer
+mkdir build
+cd build
+cmake ..
+make
+./bin/visualizer
+```
+
+<br>
+
+On sait qu'on a un visualiseur a notre disposition qui permet de generer de grandes listes aleatoires, de tester notre programme et de pouvoir observer son comportement ainsi que son bon fonctionnement.
+
+<br>
+
+```
+ARG = "45456 25 98 2 487 359 6 ....."
+valgrind ./push_swap $ARG
+```
+
+<br>
+
+On sait egalement que notre bon et vieil ami est la pour nous signaler si l'on a autant de malloc que de free.
+
+<br>
+
+```
+funcheck ./push_swap $ARG
+```
+
+<br>
+
+Et notre fameux funcheck qui nous permet de nous assurer que chacun de nos malloc est bien proteger et ne corrompera pas notre programme.
+
+<br>
+
+```
+./push_swap $ARG | ./checker_linux $ARG
+```
+
+<br>
+
+Pour finir, le checker propose par le sujet, pouvant etre realise dans la prtie bonus. Il permet de verifier que la stack B est vide, que les solutions apportees par le programme fonctionnent, que la liste fournie par l'utilisateur est valide. En bref, que tout s'est bien deroule.
