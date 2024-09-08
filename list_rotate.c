@@ -6,15 +6,15 @@
 /*   By: saberton <saberton@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/04 18:55:13 by saberton          #+#    #+#             */
-/*   Updated: 2024/09/06 15:44:40 by saberton         ###   ########.fr       */
+/*   Updated: 2024/09/08 01:42:17 by saberton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	rotate(t_list_node **a)
+static void	rotate(t_list **a)
 {
-	t_list_node	*last;
+	t_list	*last;
 
 	last = find_last(*a);
 	last->next = (*a);
@@ -24,19 +24,19 @@ static void	rotate(t_list_node **a)
 	last->next->next = NULL;
 }
 
-void	ra(t_list_node **a)
+void	ra(t_list **a)
 {
 	rotate(a);
 	write(1, "ra\n", 3);
 }
 
-void	rb(t_list_node **b)
+void	rb(t_list **b)
 {
 	rotate(b);
 	write(1, "rb\n", 3);
 }
 
-void	rr(t_list_node **a, t_list_node **b)
+void	rr(t_list **a, t_list **b)
 {
 	rotate(a);
 	rotate(b);

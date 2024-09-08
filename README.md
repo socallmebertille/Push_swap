@@ -7,7 +7,7 @@
 <br>
 
 ```
-./push_swap 6 10 7 3 4
+./push_swap "6 10 7 3 4"
 ```
 
 <br>
@@ -15,7 +15,15 @@
 Les arguments peuvent etre 2, si l'utilisateur met la suite desordonnee entre guillemets ou bien, une infinite.
 <br>
 Dans le cas ou il n'y en a que 2, on va split la string recu avec pour separateur le caractere espace. Nos nouveaux arguments auront donc pour valeur la string split. Or on va egalement ajoute un premier tableau contenant un caractere quelconque (ici '\0') car dans le second cas, le premier argument est le nom de l'executable.
+
 <br>
+
+```
+./push_swap 6 10 7 3 4
+```
+
+<br>
+
 Dans le cas ou le nombre d'argument est le nombre de chiffres desordonnes + le nom de l'executable, on peut passer a la deuxieme etape.
 
 <br>

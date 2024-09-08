@@ -6,13 +6,13 @@
 /*   By: saberton <saberton@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/05 15:55:00 by saberton          #+#    #+#             */
-/*   Updated: 2024/09/07 00:24:28 by saberton         ###   ########.fr       */
+/*   Updated: 2024/09/08 02:13:08 by saberton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	pos_and_med(t_list_node *a)
+static void	pos_and_med(t_list *a)
 {
 	int	i;
 	int	med;
@@ -34,10 +34,10 @@ void	pos_and_med(t_list_node *a)
 	return ;
 }
 
-void	find_target(t_list_node *a, t_list_node *b)
+static void	find_target(t_list *a, t_list *b)
 {
-	long		i;
-	t_list_node	*begin;
+	long	i;
+	t_list	*begin;
 
 	if (b == NULL)
 		return ;
@@ -56,13 +56,13 @@ void	find_target(t_list_node *a, t_list_node *b)
 			begin = begin->next;
 		}
 		if (i == LONG_MAX)
-			b->target = find_lowest_node(a);
+			b->target = find_smallest(a);
 		b = b->next;
 	}
 	return ;
 }
 
-void	find_cost(t_list_node *a, t_list_node *b)
+static void	find_cost(t_list *a, t_list *b)
 {
 	int	len_b;
 	int	len_a;
@@ -85,10 +85,10 @@ void	find_cost(t_list_node *a, t_list_node *b)
 	return ;
 }
 
-void	find_cheapest(t_list_node *b)
+static void	find_cheapest(t_list *b)
 {
-	t_list_node	*cheapest_node;
-	long		i;
+	t_list	*cheapest_node;
+	long	i;
 
 	if (b == NULL)
 		return ;
@@ -107,7 +107,7 @@ void	find_cheapest(t_list_node *b)
 	return ;
 }
 
-void	init_algo(t_list_node *a, t_list_node *b)
+void	init_algo(t_list *a, t_list *b)
 {
 	pos_and_med(a);
 	pos_and_med(b);

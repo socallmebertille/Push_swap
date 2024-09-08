@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_split.c                                       :+:      :+:    :+:   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: saberton <saberton@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/04 15:16:54 by saberton          #+#    #+#             */
-/*   Updated: 2024/09/04 16:37:15 by saberton         ###   ########.fr       */
+/*   Updated: 2024/09/08 05:25:19 by saberton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,8 @@ static int	ft_count(const char *str, char c)
 		else
 			i++;
 	}
-	return (count);
+	return (count);	// if (med == -1)
+	// 	exit(EXIT_FAILURE);
 }
 
 static void	free_tab(char **tab, int count)
@@ -43,6 +44,7 @@ static void	free_tab(char **tab, int count)
 		count--;
 	}
 	free(tab);
+	exit(EXIT_FAILURE);
 }
 
 static char	**ft_tab(char const *s, char c, char **tab, int i)

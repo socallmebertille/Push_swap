@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_stack.c                                      :+:      :+:    :+:   */
+/*   list_check.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: saberton <saberton@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/04 15:34:47 by saberton          #+#    #+#             */
-/*   Updated: 2024/09/06 15:43:02 by saberton         ###   ########.fr       */
+/*   Updated: 2024/09/08 01:54:22 by saberton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ static int	is_nb(char *s)
 	return (0);
 }
 
-static int	is_double(long nb, t_list_node *a)
+static int	is_double(long nb, t_list *a)
 {
 	if (a == NULL)
 		return (0);
@@ -68,14 +68,14 @@ static long	ft_atol(const char *str)
 	return (nb * sign);
 }
 
-static void	add_node(int nb, t_list_node **a)
+static void	add_node(int nb, t_list **a)
 {
-	t_list_node	*new_node;
-	t_list_node	*last;
+	t_list	*new_node;
+	t_list	*last;
 
 	if (a == NULL)
 		return ;
-	new_node = malloc(sizeof(t_list_node));
+	new_node = malloc(sizeof(t_list));
 	if (new_node == NULL)
 		return ;
 	new_node->next = NULL;
@@ -93,7 +93,7 @@ static void	add_node(int nb, t_list_node **a)
 	}
 }
 
-void	checks_init(char **av, bool two_ac, t_list_node **a)
+void	checks_and_list(char **av, bool two_ac, t_list **a)
 {
 	int		i;
 	long	nb;

@@ -6,7 +6,7 @@
 /*   By: saberton <saberton@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/04 16:16:07 by saberton          #+#    #+#             */
-/*   Updated: 2024/09/06 15:43:21 by saberton         ###   ########.fr       */
+/*   Updated: 2024/09/08 05:09:25 by saberton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,10 @@ void	free_av(char **av)
 	return ;
 }
 
-void	free_list(t_list_node **a)
+void	free_list(t_list **a)
 {
-	t_list_node	*current;
-	t_list_node	*temp;
+	t_list	*current;
+	t_list	*temp;
 
 	if (a == NULL)
 		return ;
@@ -41,7 +41,7 @@ void	free_list(t_list_node **a)
 	return ;
 }
 
-int	free_init(t_list_node **a, char **av, bool two_ac)
+int	free_init(t_list **a, char **av, bool two_ac)
 {
 	free_list(a);
 	if (two_ac)

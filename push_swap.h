@@ -6,7 +6,7 @@
 /*   By: saberton <saberton@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/04 16:41:43 by saberton          #+#    #+#             */
-/*   Updated: 2024/09/06 21:32:58 by saberton         ###   ########.fr       */
+/*   Updated: 2024/09/08 02:29:24 by saberton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,48 +19,41 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-typedef struct s_list_node
+typedef struct s_list
 {
-	int					nb;
-	int					position;
-	int					cost;
-	bool				mediane;
-	bool				cheapest;
-	struct s_list_node	*target;
-	struct s_list_node	*previous;
-	struct s_list_node	*next;
-}						t_list_node;
+	int				nb;
+	int				position;
+	int				cost;
+	bool			mediane;
+	bool			cheapest;
+	struct s_list	*target;
+	struct s_list	*previous;
+	struct s_list	*next;
+}					t_list;
 
-void					free_list(t_list_node **a);
-void					free_av(char **av);
-void					checks_init(char **av, bool two_ac, t_list_node **a);
-void					three_node_sort(t_list_node **a);
-void					sa(t_list_node **a);
-void					sb(t_list_node **b);
-void					ss(t_list_node **a, t_list_node **b);
-void					ra(t_list_node **a);
-void					rb(t_list_node **b);
-void					rr(t_list_node **a, t_list_node **b);
-void					rra(t_list_node **a);
-void					rrb(t_list_node **b);
-void					rrr(t_list_node **a, t_list_node **b);
-void					pa(t_list_node **a, t_list_node **b);
-void					pb(t_list_node **a, t_list_node **b);
-void					pos_and_med(t_list_node *a);
-void					find_target(t_list_node *a, t_list_node *b);
-void					find_cost(t_list_node *a, t_list_node *b);
-void					find_cheapest(t_list_node *b);
-void					init_algo(t_list_node *a, t_list_node *b);
-void					replace_in_a(t_list_node **a, t_list_node **b);
-void					push_algo(t_list_node **a, t_list_node **b);
-int						free_init(t_list_node **a, char **av, bool two_ac);
-int						count_node(t_list_node *a);
-char					**ft_split(char const *s, char c);
-char					*ft_substr(char const *s, unsigned int start,
-							size_t len);
-bool					in_order(t_list_node *a);
-t_list_node				*find_last(t_list_node *a);
-t_list_node				*find_biggest_node(t_list_node *a);
-t_list_node				*find_lowest_node(t_list_node *a);
+void				checks_and_list(char **av, bool two_ac, t_list **a);
+void				free_av(char **av);
+void				free_list(t_list **a);
+void				sa(t_list **a);
+void				sb(t_list **b);
+void				ss(t_list **a, t_list **b);
+void				ra(t_list **a);
+void				rb(t_list **b);
+void				rr(t_list **a, t_list **b);
+void				rra(t_list **a);
+void				rrb(t_list **b);
+void				rrr(t_list **a, t_list **b);
+void				pa(t_list **a, t_list **b);
+void				pb(t_list **a, t_list **b);
+void				mediane_a_to_b(t_list **a, t_list **b);
+void				init_algo(t_list *a, t_list *b);
+int					free_init(t_list **a, char **av, bool two_ac);
+int					count_node(t_list *a);
+char				*ft_substr(char const *s, unsigned int start, size_t len);
+char				**ft_split(char const *s, char c);
+bool				in_order(t_list *a);
+t_list				*find_last(t_list *a);
+t_list				*find_biggest(t_list *a);
+t_list				*find_smallest(t_list *a);
 
 #endif

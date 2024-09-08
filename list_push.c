@@ -6,15 +6,15 @@
 /*   By: saberton <saberton@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/05 16:32:03 by saberton          #+#    #+#             */
-/*   Updated: 2024/09/05 18:14:31 by saberton         ###   ########.fr       */
+/*   Updated: 2024/09/08 01:42:11 by saberton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	push(t_list_node **a, t_list_node **b)
+static void	push(t_list **a, t_list **b)
 {
-	t_list_node	*push_node;
+	t_list	*push_node;
 
 	push_node = *a;
 	if (*a == NULL)
@@ -35,13 +35,13 @@ static void	push(t_list_node **a, t_list_node **b)
 	}
 }
 
-void	pa(t_list_node **a, t_list_node **b)
+void	pa(t_list **a, t_list **b)
 {
 	push(b, a);
 	write(1, "pa\n", 3);
 }
 
-void	pb(t_list_node **a, t_list_node **b)
+void	pb(t_list **a, t_list **b)
 {
 	push(a, b);
 	write(1, "pb\n", 3);

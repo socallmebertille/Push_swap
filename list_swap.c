@@ -6,13 +6,13 @@
 /*   By: saberton <saberton@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/04 17:23:05 by saberton          #+#    #+#             */
-/*   Updated: 2024/09/06 15:45:26 by saberton         ###   ########.fr       */
+/*   Updated: 2024/09/08 01:42:19 by saberton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	swap(t_list_node **a)
+static void	swap(t_list **a)
 {
 	*a = (*a)->next;
 	(*a)->previous->previous = *a;
@@ -23,19 +23,19 @@ static void	swap(t_list_node **a)
 	(*a)->previous = NULL;
 }
 
-void	sa(t_list_node **a)
+void	sa(t_list **a)
 {
 	swap(a);
 	write(1, "sa\n", 3);
 }
 
-void	sb(t_list_node **b)
+void	sb(t_list **b)
 {
 	swap(b);
 	write(1, "sb\n", 3);
 }
 
-void	ss(t_list_node **a, t_list_node **b)
+void	ss(t_list **a, t_list **b)
 {
 	swap(a);
 	swap(b);
