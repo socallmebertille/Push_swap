@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   list_check.c                                       :+:      :+:    :+:   */
+/*   list_check_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: saberton <saberton@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/04 15:34:47 by saberton          #+#    #+#             */
-/*   Updated: 2024/09/11 06:49:37 by saberton         ###   ########.fr       */
+/*   Created: 2024/09/11 03:41:15 by saberton          #+#    #+#             */
+/*   Updated: 2024/09/11 10:59:39 by saberton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "checker_bonus.h"
 
 static int	is_nb(char *s)
 {
@@ -90,7 +90,7 @@ static void	add_node(int nb, t_list **a)
 	}
 	else
 	{
-		last = find_last(*a);
+		last = ft_lstlast(*a);
 		last->next = new_node;
 		new_node->previous = last;
 	}

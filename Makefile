@@ -15,6 +15,19 @@ SRCS = ft_split.c \
 		push_swap.c
 OBJS = ${SRCS:.c=.o}
 
+BONUS = checker
+SRCS_BONUS = get_next_line_bonus.c \
+		get_next_line_utils_bonus.c \
+		free_init_bonus.c \
+		ft_split_bonus.c \
+		list_check_bonus.c \
+		list_swap_bonus.c \
+		list_rotate_bonus.c \
+		list_reverse_rotate_bonus.c \
+		list_push_bonus.c \
+		checker_bonus.c
+OBJS_BONUS = ${SRCS_BONUS:.c=.o}
+
 GREEN = \033[1;32m
 RED = \033[1;31m
 YELLOW = \033[1;33m
@@ -32,13 +45,19 @@ REDO = [ 🗘 ]
 all: ${NAME}
 
 ${NAME}: ${OBJS}
+	@${CC} ${FLAGS} ${OBJS} -o ${NAME}
+	@echo "${GREEN} ============ ${SUCCESS} ${NAME} compiled successfully! ================ ${RESET}"
+
+${BONUS}: ${OBJS} ${OBJS_BONUS}
+	@${CC} ${FLAGS} ${OBJS_BONUS} -o ${BONUS}
+	@echo "${GREEN} ============ ${SUCCESS} ${BONUS} compiled successfully! ================ ${RESET}"
 
 .c.o:
 	@${CC} ${FLAGS} -c $< -o $@ || (echo "\n${RED} ============ ${ERROR} Compilation failed ! ==================== ${NC}\n"; exit 1)
 	@echo "${GREEN} ============ ${SUCCESS} Successful compilation ! ================ ${RESET}"
 
 clean:
-	@rm -rf ${OBJS}
+	@rm -rf ${OBJS} ${OBJS_BONUS}
 	@echo "${YELLOW} ============ ${CLEAN} Successful binary cleaning ! ============ ${RESET}"
 
 fclean: clean
@@ -47,5 +66,7 @@ fclean: clean
 
 re: fclean all
 	@echo "${PURPLE} ============ ${REDO} Redo completed ! ======================== ${RESET}"
+
+bonus: ${BONUS}
 
 .PHONY: all clean fclean re

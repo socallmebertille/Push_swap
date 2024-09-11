@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_split.c                                         :+:      :+:    :+:   */
+/*   ft_split_bonus.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: saberton <saberton@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/04 15:16:54 by saberton          #+#    #+#             */
-/*   Updated: 2024/09/11 03:44:02 by saberton         ###   ########.fr       */
+/*   Created: 2024/09/11 03:43:47 by saberton          #+#    #+#             */
+/*   Updated: 2024/09/11 03:44:14 by saberton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "checker_bonus.h"
 
 static int	ft_count(const char *str, char c)
 {

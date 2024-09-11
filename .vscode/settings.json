@@ -8,6 +8,7 @@
         "ranges": "c",
         "span": "c",
         "regex": "c",
-        "utility": "c"
+        "utility": "c",
+        "checker_bonus.h": "c"
     }
 }
