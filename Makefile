@@ -1,6 +1,6 @@
 NAME = push_swap
 CC = cc
-FLAGS = -Wall -Wextra -Werror -g3
+FLAGS = -Wall -Wextra -Werror
 SRCS = ft_split.c \
 		ft_split_utils.c \
 		list_check.c \
