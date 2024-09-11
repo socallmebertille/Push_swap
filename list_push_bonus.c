@@ -6,7 +6,7 @@
 /*   By: saberton <saberton@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 04:38:26 by saberton          #+#    #+#             */
-/*   Updated: 2024/09/11 10:59:54 by saberton         ###   ########.fr       */
+/*   Updated: 2024/09/11 19:03:32 by saberton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,13 +38,11 @@ static void	push(t_list **a, t_list **b)
 int	pa(t_list **a, t_list **b)
 {
 	push(b, a);
-	write(1, "pa\n", 3);
 	return (0);
 }
 
 int	pb(t_list **a, t_list **b)
 {
 	push(a, b);
-	write(1, "pb\n", 3);
 	return (0);
 }

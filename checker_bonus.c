@@ -6,7 +6,7 @@
 /*   By: saberton <saberton@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 01:44:24 by saberton          #+#    #+#             */
-/*   Updated: 2024/09/11 12:31:38 by saberton         ###   ########.fr       */
+/*   Updated: 2024/09/11 19:05:17 by saberton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,30 +60,30 @@ static void	add_ope(t_list **ope, char *str)
 
 static int	check_ope(char *ope, t_list **a, t_list **b)
 {
-	if (ft_strncmp(ope, "sa", 2) == 0)
+	if (ft_strcmp(ope, "sa") == 0)
 		return (sa(a));
-	else if (ft_strncmp(ope, "sb", 2) == 0)
+	else if (ft_strcmp(ope, "sb") == 0)
 		return (sb(b));
-	else if (ft_strncmp(ope, "ss", 2) == 0)
+	else if (ft_strcmp(ope, "ss") == 0)
 		return (ss(a, b));
-	else if (ft_strncmp(ope, "rra", 3) == 0)
+	else if (ft_strcmp(ope, "rra") == 0)
 		return (rra(a));
-	else if (ft_strncmp(ope, "rrb", 3) == 0)
+	else if (ft_strcmp(ope, "rrb") == 0)
 		return (rrb(b));
-	else if (ft_strncmp(ope, "rrr", 3) == 0)
+	else if (ft_strcmp(ope, "rrr") == 0)
 		return (rrr(a, b));
-	else if (ft_strncmp(ope, "ra", 2) == 0)
+	else if (ft_strcmp(ope, "ra") == 0)
 		return (ra(a));
-	else if (ft_strncmp(ope, "rb", 2) == 0)
+	else if (ft_strcmp(ope, "rb") == 0)
 		return (rb(b));
-	else if (ft_strncmp(ope, "rr", 2) == 0)
+	else if (ft_strcmp(ope, "rr") == 0)
 		return (rr(a, b));
-	else if (ft_strncmp(ope, "pa", 2) == 0)
+	else if (ft_strcmp(ope, "pa") == 0)
 		return (pa(a, b));
-	else if (ft_strncmp(ope, "pb", 2) == 0)
+	else if (ft_strcmp(ope, "pb") == 0)
 		return (pb(a, b));
-	else
-		return (1);
+	write(2, "Error\n", 6);
+	return (1);
 }
 
 static void	made_ope(t_list **ope, t_list **a, t_list **b)
@@ -93,12 +93,13 @@ static void	made_ope(t_list **ope, t_list **a, t_list **b)
 	t_list	*temp;
 
 	check = 0;
-	str = get_next_line(STDIN_FILENO);
-	while (str != NULL)
+	while (1)
 	{
+		str = get_next_line(STDIN_FILENO);
+		if (!str || !*str)
+			break ;
 		add_ope(ope, str);
 		free(str);
-		str = get_next_line(STDIN_FILENO);
 	}
 	if (!ope)
 		return ;
@@ -112,7 +113,6 @@ static void	made_ope(t_list **ope, t_list **a, t_list **b)
 		free(temp->move);
 		free(temp);
 	}
-	return ;
 }
 
 int	main(int ac, char **av)

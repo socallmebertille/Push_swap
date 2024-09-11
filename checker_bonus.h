@@ -6,7 +6,7 @@
 /*   By: saberton <saberton@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 01:51:13 by saberton          #+#    #+#             */
-/*   Updated: 2024/09/11 12:16:44 by saberton         ###   ########.fr       */
+/*   Updated: 2024/09/11 19:03:12 by saberton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,14 +49,9 @@ int					pa(t_list **a, t_list **b);
 int					pb(t_list **a, t_list **b);
 int					ft_strlen(char *str);
 int					free_init(t_list **a, char **av, bool two_ac);
-int					ft_strncmp(const char *s1, const char *s2, size_t n);
+int					ft_strcmp(char *s1, char *s2);
 char				*get_next_line(int fd);
 char				*ft_strjoin(char *s1, char *s2);
-// size_t	ft_strlen(const char *s);
-// char	*ft_strjoin(char const *s1, char const *s2, int i, int j);
-// char	*ft_strchr(const char *s, int c);
-// char	*get_next_line(int fd);
-// char	*ft_strdup(char *s);
 char				*ft_substr(char const *s, unsigned int start, size_t len);
 char				**ft_split(char const *s, char c);
 t_list				*ft_lstlast(t_list *a);

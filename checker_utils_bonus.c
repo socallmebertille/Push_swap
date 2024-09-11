@@ -6,7 +6,7 @@
 /*   By: saberton <saberton@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 12:19:04 by saberton          #+#    #+#             */
-/*   Updated: 2024/09/11 12:31:50 by saberton         ###   ########.fr       */
+/*   Updated: 2024/09/11 18:05:11 by saberton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,18 +37,21 @@ bool	in_order(t_list **a)
 	return (true);
 }
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+int 	ft_strcmp(char *s1, char *s2)
 {
-	size_t	i;
+    	while (*s1 && *s2 && *s1 == *s2)
+    	{
+            	s1++;
+            	s2++;
+    	}
+    	return (*s1 - *s2);
+}
+void	ft_putstr_fd(char *str, int fd)
+{
+	int	i;
 
 	i = 0;
-	while (i < n && s1[i] && s2[i])
-	{
-		if (s1[i] != s2[i])
-			return ((unsigned char)s1[i] - (unsigned char)s2[i]);
-		i++;
-	}
-	if (i < n)
-		return ((unsigned char)s1[i] - (unsigned char)s2[i]);
-	return (0);
+	while (str[i])
+		write(fd, &str[i++], 1);
+	write(fd, "\n", 1);
 }

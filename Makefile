@@ -25,6 +25,7 @@ SRCS_BONUS = get_next_line_bonus.c \
 		list_rotate_bonus.c \
 		list_reverse_rotate_bonus.c \
 		list_push_bonus.c \
+		checker_utils_bonus.c \
 		checker_bonus.c
 OBJS_BONUS = ${SRCS_BONUS:.c=.o}
 
