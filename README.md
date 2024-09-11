@@ -34,13 +34,10 @@ Dans le cas ou le nombre d'argument est le nombre de chiffres desordonnes + le n
 
 A partir du deuxieme argument av[1] et pour chacun d'entre eux, on :
 <br>
-    - verifie si c'est un nombre ;
-<br>
-    - transforme le nombre de type char en type long ;
-<br>
-    - verifie que sa valeur est comprise entre le INT_MIN et le INT_MAX ;
-<br>
-    - verifie qu'il n'y a pas de doublon.
+- verifie si c'est un nombre ;
+- transforme le nombre de type char en type long ;
+- verifie que sa valeur est comprise entre le INT_MIN et le INT_MAX ;
+- verifie qu'il n'y a pas de doublon.
 <br>
 Si un probleme survient dans l'une de ces verifications on libere l'espace alloue a la liste chainee et aux arguments uniquement si on a utiliser la fonction qui split auparavent. Puis on print un message d'erreur.
 <br>
@@ -66,11 +63,9 @@ Dans le cas, on a juste a swap les 2 nombres, cad, swap les donnees concernant p
 
 On recupere le maillons le plus grand et si il se trouve :
 <br>
-    - en tete de liste : on le rotate (= on le place en queue de liste) ;
-<br>
-    - au milieu de la liste : on reverse rotate (= on place le dernier en premier pour qu'ici le milieu se retrouve bas) ;
-<br>
-    - en queue de liste ET que la tete est > au milieu : on les swap.
+- en tete de liste : on le rotate (= on le place en queue de liste) ;
+- au milieu de la liste : on reverse rotate (= on place le dernier en premier pour qu'ici le milieu se retrouve bas) ;
+- en queue de liste ET que la tete est > au milieu : on les swap.
 
 <br>
 
@@ -96,17 +91,12 @@ On calcule la mediane (= nb se situant au milieu d'une liste ordonne) qui nous s
 
 Tant que l'on a des elements dans B on met a jour :
 <br>
-    - les index de positions des noeuds et leurs positions vis-a-vis de la mediane (de A pour les elements de A, respectivement pour B) ;
-<br>
-    - la cible de chaque element de B vis-avis de B (cad, le plus proche superieur de B dans A) s'il en a un, sinon le plus petit de A ;
-<br>
-    - le cout de deplacement de chaque element B vers la tete de liste B additionne a celui de sa cible
-<br>
-        -> si l'element est au-dessus de la mediane : nb de rotate = numero de position
-<br>
-        -> sinon : nb de reverse rotate = longueur de la liste - numero de position
-<br>
-    - l'element le moins cher
+- les index de positions des noeuds et leurs positions vis-a-vis de la mediane (de A pour les elements de A, respectivement pour B) ;
+- la cible de chaque element de B vis-avis de B (cad, le plus proche superieur de B dans A) s'il en a un, sinon le plus petit de A ;
+- le cout de deplacement de chaque element B vers la tete de liste B additionne a celui de sa cible
+- -> si l'element est au-dessus de la mediane : nb de rotate = numero de position
+- -> sinon : nb de reverse rotate = longueur de la liste - numero de position
+- l'element le moins cher
 <br>
 Une fois cela calcule, on deplace l'element le moins couteux et sa target dans les stacks associees puis on peut donc push celui de B dans A au-dessus de sa target. On repete l'operation autant de fois que d'element dans B.
 
