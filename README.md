@@ -158,4 +158,4 @@ Et notre fameux funcheck qui nous permet de nous assurer que chacun de nos mallo
 
 <br>
 
-Pour finir, le checker propose par le sujet, pouvant etre realise dans la prtie bonus. Il permet de verifier que la stack B est vide, que les solutions apportees par le programme fonctionnent, que la liste fournie par l'utilisateur est valide. En bref, que tout s'est bien deroule.
+Pour finir, le checker propose par le sujet, pouvant etre realise dans la partie bonus. Il permet de verifier que la stack B est vide, que les solutions apportees par le programme fonctionnent, que la liste fournie par l'utilisateur est valide. En bref, que tout s'est bien deroule.
