@@ -6,7 +6,7 @@
 /*   By: saberton <saberton@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 12:19:04 by saberton          #+#    #+#             */
-/*   Updated: 2024/09/11 18:05:11 by saberton         ###   ########.fr       */
+/*   Updated: 2024/09/11 20:39:44 by saberton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,21 +37,12 @@ bool	in_order(t_list **a)
 	return (true);
 }
 
-int 	ft_strcmp(char *s1, char *s2)
+int	ft_strcmp(char *s1, char *s2)
 {
-    	while (*s1 && *s2 && *s1 == *s2)
-    	{
-            	s1++;
-            	s2++;
-    	}
-    	return (*s1 - *s2);
-}
-void	ft_putstr_fd(char *str, int fd)
-{
-	int	i;
-
-	i = 0;
-	while (str[i])
-		write(fd, &str[i++], 1);
-	write(fd, "\n", 1);
+	while (*s1 && *s2 && *s1 == *s2)
+	{
+		s1++;
+		s2++;
+	}
+	return (*s1 - *s2);
 }
